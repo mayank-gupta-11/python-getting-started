@@ -12,7 +12,7 @@ spec:
         app: hello-world
     spec:
       containers:
-      - image: mykvvv/my-repo:python-flask-app
+      - image: okteto.dev/python-hello-world:1.0.1
         name: hello-world
 
 ---
