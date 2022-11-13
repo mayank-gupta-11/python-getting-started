@@ -25,7 +25,7 @@ def details():
         query_param = request.args
         print(content)
         print("-----------------------")
-        print(content["delimeter"])
+        #print(content["delimeter"])
         print("-----------------------")
         print(query_param.get("name"))
         return post_method()
