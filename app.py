@@ -4,10 +4,31 @@ from flask import Flask
 
 app = Flask(__name__)
 
-@app.route('/')
-def hello_world():
-    msg = 'Hello World!'
-    return msg
+def get_method():
+    return "get method call was successfull!"
+
+def post_method():
+    return "post method call was successfull!"
+
+@app.route('/details', methods=['GET', 'POST'])
+def details():
+    if request.method == 'GET':
+        content = request.json
+        query_param = request.args
+        print(content)
+        print("-----------------------")
+        print("-----------------------")
+        print(query_param.get("name"))
+        return get_method()
+    if request.method == 'POST':
+        content = request.json
+        query_param = request.args
+        print(content)
+        print("-----------------------")
+        print(content["delimeter"])
+        print("-----------------------")
+        print(query_param.get("name"))
+        return post_method()
 
 def attach():
   if os.environ.get('WERKZEUG_RUN_MAIN'):
