@@ -1,7 +1,7 @@
 name: python-getting-started
 build:
   hello-world:
-    image: mykvvv/my-repo:python-flask-app
+    image: okteto.dev/python-hello-world:1.0.1
     context: .
 deploy:
   - kubectl apply -f k8s.yml
